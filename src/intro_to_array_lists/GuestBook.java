@@ -28,6 +28,7 @@ public class GuestBook implements ActionListener {
 	
 	void run () {
 		frame.setVisible(true);
+		
 		addName.addActionListener(this);
 		viewNames.addActionListener(this);
 		addName.setText("Add a name");
@@ -35,7 +36,9 @@ public class GuestBook implements ActionListener {
 		panel.add(addName);
 		panel.add(viewNames);
 		frame.add(panel);
+		frame.pack();
 		
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 	}
 
 
@@ -48,7 +51,7 @@ public class GuestBook implements ActionListener {
 		}
 		
 		else if(e.getSource() == viewNames) {
-			for(int i = 0; i < names.size(); i ++) {
+			for(int i = 1; i < names.size(); i ++) {
 				String sname = names.get(i);
 			JOptionPane.showMessageDialog(null, "Guest #" + i + sname);
 			}
